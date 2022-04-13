@@ -8,3 +8,8 @@ Este programa foi baseado em: https://medium.com/@rodrigobercinimartins/como-ext
 $`pip install yahooquery`
 
 $`python3 extract.py`
+
+
+Alternativo: 
+
+pip install yfinance
