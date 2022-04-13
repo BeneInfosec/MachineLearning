@@ -1,18 +1,23 @@
 from yahooquery import Ticker
 
-petrobras = Ticker("PETR4.SA")
-print( petrobras.history(period="max"))
+acao = Ticker("BPAC11.SA")
+#print( petrobras.history(period="max"))
 
 ''' Extraindo periodo de 60 dias com intervalo de 30 minutos'''
-df = petrobras.history(period="60d",  interval = "30m")
+#df = petrobras.history(start="2022-02-22", end="2022-02-23", interval = "1m" )
+
 
 ''' Extraindo periodo de 30 minutos'''
-#petrobras.history(period="60d",  interval = "30m")
+#df = acao.history(period="1d",  interval = "1m")
+
+
 
 ''' Extraindo de um periodo pré-estabelecido'''
-#petr.history(start="2005–05–01", end="2013–12–31")
+df = acao.history(start="2022-04-11", end="2022-04-12", interval = "1m")
+
+print(df)
 
 '''Importação dos dados para CSV'''
 compression_opts = dict(method='zip',archive_name='out.csv')
 
-df.to_csv('out.zip', index=False,compression=compression_opts)
+df.to_csv('out.zip', index=True, compression=compression_opts)
